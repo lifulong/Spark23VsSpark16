@@ -1,0 +1,57 @@
+{
+    "entities": {
+        "session_100w": {
+            "fields": [
+                {"name":"date" ,"type":"date" ,"date_format":"%Y-%m-%d", "start_date":"20180103", "end_date":"20180203"},
+                {"name":"user_id" ,"type":"int" ,"min":0, "max": 100000 },
+                {"name":"session_id" ,"type":"string" ,"length":3 },
+                {"name":"page_id" ,"type":"int" ,"min":0, "max": 10 },
+                {"name":"action_time","type":"time","time_format":"%Y-%m-%d %H:%M:%S","start_time":"2016-02-03 00:00:00","end_time":"2018-02-03 00:00:00"},
+                {"name":"search_keyword" ,"type":"string" ,"enum":["火锅", "蛋糕", "重庆辣子鸡", "重庆小面", "呷哺呷哺", "新辣道鱼火锅", "国贸大厦", "太古商场", "日本料理", "温泉"] },
+                {"name":"click_category_id" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"click_product_id" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"order_category_ids" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"order_product_ids" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"pay_category_ids" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"pay_product_ids" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"city_id" ,"type":"int" ,"min":0, "max": 100 }
+            ],
+	    "compress" : "parquet",
+	    "separator": ",",
+            "coding": "utf-8",
+            "parallel" : 10,
+            "line" : "1000000"
+        },
+	"user_100w": {
+            "fields": [
+                {"name":"user_id" ,"type":"int" ,"min":0, "max": 100000 },
+                {"name":"user_name" ,"type":"string" ,"length":4 },
+                {"name":"name" ,"type":"string" ,"length":4 },
+                {"name":"age" ,"type":"int" ,"min":0, "max": 60 },
+                {"name":"professional" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"city" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"sex" ,"type":"string" ,"enum":["male", "female"] }
+	    ],
+	    "compress" : "parquet",
+	    "separator": ",",
+            "coding": "utf-8",
+            "parallel" : 10,
+            "line" : "1000000"
+	},
+	"product_100w": {
+            "fields": [
+                {"name":"product_id" ,"type":"int" ,"min":0, "max": 100 },
+                {"name":"product_name" ,"type":"string" ,"length":4 },
+                {"name":"extend_info" ,"type":"string" ,"enum":["1", "2"] }
+	    ],
+	    "compress" : "parquet",
+	    "separator": ",",
+            "coding": "utf-8",
+            "parallel" : 10,
+            "line" : "1000000"
+	}
+    },
+    "app_name": "ShannonGen",
+    "reserve": "reserve"
+}
+
